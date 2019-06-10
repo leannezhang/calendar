@@ -4,6 +4,32 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+###
+
+▢ Use JavaScript, TypeScript or Flow to create a Single Page Application in the
+framework 1 of your choice2. (done)
+▢ Include a README.md with instructions for how to run the app. Ideally, setup consists
+of something like npm install && npm run start.
+▢ In the README.md or through code commenting, please include any tradeoffs you
+made (e.g. ran out of time so you didn’t do X) or decisions you’d like to explain.
+▢ The calendar should render events in the “Monthly” view (see example below)
+▢ The app should be URL driven. So visiting http://localhost:<port>/2018/4 should take
+a user to April of 2018. Visiting an invalid URL should take the user to the current
+month.
+▢ Provide a simple P revious and N ext month button to allow navigation between
+months. (done)
+▢ Figure out a client-side algorithm for title launch placement within the calendar cells.
+Use the events provided here as a sample. N ote that while the provided events are
+finite, in practice the number of titles launched in a month are in the thousands.
+▢ Fetch the provided events JSON from a simple node.js server.
+▢ Figure out a client-side algorithm for how you will render the weeks and days.
+▢ Use Flexbox or CSS Grid to render and style the calendar. Do not use the Table
+element. While this is not a design position, we do look for a sense of design, so feel
+free to make this look good, but if you find yourself up against the 4 hour mark, don’t
+sweat it.
+▢ Do not use : any UI component library (e.g. material-ui, react-datepicker).
+▢ Do use: functional helper libraries (if you want), such as Lodash , Moment , or date-utils .
+
 ### `npm start`
 
 Runs the app in the development mode.<br>
@@ -28,14 +54,6 @@ Your app is ready to be deployed!
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
 ### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
 
 ## Learn More
 
