@@ -1,12 +1,16 @@
-.App-header {
-  background-color: #282c34;
-  min-height: 10vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.dateHeader {
+  color: #fa8072;
+  grid-template-columns: 10fr 1fr 1fr;
+  font-size: 20px;
+  padding: 5px;
+  display: grid;
+}
+
+.dateHeader button {
+  display: grid;
+  background-color: mistyrose;
+  margin: 0 2px;
+  border: none;
 }
 
 .calendarContainer {
@@ -26,6 +30,6 @@
 }
 
 .day {
-  border: 1px solid black;
+  border: 1px solid mistyrose;
   padding: 5px;
 }
