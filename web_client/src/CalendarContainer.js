@@ -1,8 +1,9 @@
 import React from "react";
 import moment from "moment";
 import Calendar from "./Calendar";
-const dateRegex = /(\d{4})\/(\d{1,2})/;
 
+const dateRegex = /(\d{4})\/(\d{1,2})/;
+const DATE_FORMAT = "MMMM YYYY";
 export default class CalendarContainer extends React.Component {
   state = {
     date: null, // default to current month
@@ -14,7 +15,7 @@ export default class CalendarContainer extends React.Component {
 
     return {
       date: date, // default to current month
-      dateToString: date.format("LLLL")
+      dateToString: date.format(DATE_FORMAT)
     };
   }
 
@@ -32,7 +33,7 @@ export default class CalendarContainer extends React.Component {
       const date = moment(`${year}-${month}`, "YYYY-MM");
       this.setState({
         date: date,
-        dateToString: date.format("LLLL")
+        dateToString: date.format(DATE_FORMAT)
       });
     }
   }
@@ -56,7 +57,7 @@ export default class CalendarContainer extends React.Component {
 
     this.setState({
       date: previousMonth,
-      dateToString: previousMonth.format("LLLL")
+      dateToString: previousMonth.format(DATE_FORMAT)
     });
   };
 
@@ -64,7 +65,7 @@ export default class CalendarContainer extends React.Component {
     const nextMonth = moment(this.state.date).add(1, "months");
     this.setState({
       date: nextMonth,
-      dateToString: nextMonth.format("LLLL")
+      dateToString: nextMonth.format(DATE_FORMAT)
     });
   };
 }
