@@ -1,16 +1,16 @@
 import React from "react";
-import "./App.css";
+import "./Calendar.css";
 import PropTypes from "prop-types"; // ES6
 
-const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"];
+const DAYS = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
 const OFFSETMAP = {
-  Mon: 0,
-  Tue: 1,
-  Wed: 2,
-  Thu: 3,
-  Fri: 4,
-  Sat: 5,
-  Sun: 6
+  Sun: 0,
+  Mon: 1,
+  Tue: 2,
+  Wed: 3,
+  Thu: 4,
+  Fri: 5,
+  Sat: 6
 };
 
 export default class Calendar extends React.Component {
@@ -63,22 +63,30 @@ export default class Calendar extends React.Component {
 
   _renderHeader() {
     return (
-      <tr>
+      <div className="header">
         {DAYS.map(dayLabel => {
-          return <th key={dayLabel}>{dayLabel}</th>;
+          return (
+            <div className="day" key={dayLabel}>
+              {dayLabel}
+            </div>
+          );
         })}
-      </tr>
+      </div>
     );
   }
 
   _renderWeeks() {
     const weeks = this.state.calendar.map((week, i) => {
       return (
-        <tr key={i}>
+        <div key={i} className="week">
           {week.map((day, i) => {
-            return <td key={i}>{day}</td>;
+            return (
+              <div key={i} className="day">
+                {day}
+              </div>
+            );
           })}
-        </tr>
+        </div>
       );
     });
     return weeks;
@@ -87,10 +95,10 @@ export default class Calendar extends React.Component {
   render() {
     return (
       <div>
-        <table>
+        <div className="calendarContainer">
           {this._renderHeader()}
-          <tbody>{this._renderWeeks()}</tbody>
-        </table>
+          <div>{this._renderWeeks()}</div>
+        </div>
       </div>
     );
   }

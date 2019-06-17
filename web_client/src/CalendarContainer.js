@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import moment from "moment";
 import Calendar from "./Calendar";
 const dateRegex = /(\d{4})\/(\d{1,2})/;
