@@ -52,7 +52,7 @@ export default class Calendar extends React.Component {
     calendar.push(firstRow);
     // rest of rows
     for (let r = 2; r <= numberOfRows; r++) {
-      let row = [].fill(" ", 0, 6);
+      let row = [" ", " ", " ", " ", " ", " ", " "];
       for (let d = 0; d < 7 && daySofar <= numberOfDays; d++) {
         row[d] = daySofar++;
       }

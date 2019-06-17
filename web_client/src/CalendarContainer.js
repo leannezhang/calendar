@@ -40,11 +40,13 @@ export default class CalendarContainer extends React.Component {
   render() {
     const { date, dateToString } = this.state;
     return (
-      <div className="App">
-        <header className="App-header">{dateToString}</header>
+      <div className="app">
+        <header className="dateHeader">
+          {dateToString}
+          <button onClick={this._handlePreviousMonthClick}>Previous</button>
+          <button onClick={this._handleNextMonthClick}>Next</button>
+        </header>
         {date ? <Calendar date={date} dateToString={dateToString} /> : null}
-        <button onClick={this._handlePreviousMonthClick}>Previous</button>
-        <button onClick={this._handleNextMonthClick}>Next</button>
       </div>
     );
   }
