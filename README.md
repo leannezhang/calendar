@@ -2,7 +2,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ### Calendar UI
 
-![Demo](/web_client/images/calendar.png)
+![Demo](https://github.com/leannezhang/calendar/blob/master/web_client/image/calendar.png)
 
 ### How to run
 
