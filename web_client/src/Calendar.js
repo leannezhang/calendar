@@ -85,7 +85,7 @@ export default class Calendar extends React.Component {
                 {movies && movies[day] ? (
                   <div className="movies">
                     {movies[day].map(movie => {
-                      return <div>{movie.title}</div>;
+                      return <div key={movie.id}>{movie.title}</div>;
                     })}
                   </div>
                 ) : null}
