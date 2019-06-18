@@ -15,7 +15,8 @@ const OFFSETMAP = {
 
 export default class Calendar extends React.Component {
   static propTypes = {
-    date: PropTypes.object
+    date: PropTypes.object,
+    movies: PropTypes.object
   };
 
   state = {
@@ -24,7 +25,6 @@ export default class Calendar extends React.Component {
 
   componentDidUpdate(prevProps) {
     if (prevProps.dateToString !== this.props.dateToString) {
-      console.log(true);
       this.setState({
         calendar: this._buildCalendar()
       });
@@ -32,12 +32,10 @@ export default class Calendar extends React.Component {
   }
 
   _buildCalendar() {
-    const { date, dateToString } = this.props;
-    console.log("dateTOString", dateToString);
+    const { date } = this.props;
     const start = date.format("ddd");
     const numberOfDays = date.daysInMonth();
     const startIndex = OFFSETMAP[start];
-    console.log(startIndex);
 
     const numberOfRows = Math.ceil((numberOfDays + startIndex) / 7);
 
@@ -76,6 +74,7 @@ export default class Calendar extends React.Component {
   }
 
   _renderWeeks() {
+    const { movies } = this.props;
     const weeks = this.state.calendar.map((week, i) => {
       return (
         <div key={i} className="week">
@@ -83,6 +82,13 @@ export default class Calendar extends React.Component {
             return (
               <div key={i} className="day">
                 {day}
+                {movies && movies[day] ? (
+                  <div className="movies">
+                    {movies[day].map(movie => {
+                      return <div>{movie.title}</div>;
+                    })}
+                  </div>
+                ) : null}
               </div>
             );
           })}
